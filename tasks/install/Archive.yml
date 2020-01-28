@@ -1,0 +1,18 @@
+---
+
+- name: "Fetch MetricBeat archive file"
+  get_url:
+    url: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    force: False
+  with_items:
+    - src: "{{ metricbeat_package_url }}"
+      dest: "/tmp/metricbeat_{{ metricbeat_version }}.deb"
+
+- name: "Install metricbeat"
+  apt:
+    deb: "{{ item }}"
+  with_items:
+    - "/tmp/metricbeat_{{ metricbeat_version }}.deb"
+
+# vi:ts=2:sw=2:et:ft=yaml
