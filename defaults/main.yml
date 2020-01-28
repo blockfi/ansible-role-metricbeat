@@ -1,6 +1,8 @@
 ---
 
 # Metricbeat user and group
+metricbeat_config_template_file: etc/metricbeat/metricbeat.yml.j2
+
 #  WARNING: If you run metricbeat with a user other than root make sure
 #  your logs are readable by the metricbeat user. Add the metricbeat user
 #  to a privileged group, with access to your logs (adm)

@@ -2,7 +2,7 @@
 
 - name: Metricbeat configuration file
   template:
-    src: etc/metricbeat/metricbeat.yml.j2
+    src: "{{ metricbeat_config_template_file }}"
     dest: "{{metricbeat_config_file}}"
     owner: "{{metricbeat_user}}"
     group: "{{metricbeat_group}}"
