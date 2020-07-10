@@ -22,7 +22,7 @@
 
 - name: Install MetricBeat .deb
   apt:
-    deb: "{{metricbeat_baseurl}}/{{item}}-{{metricbeat_version}}-amd64.deb"
+    deb: "{{metricbeat_baseurl}}/{{item}}-oss-{{metricbeat_version}}-amd64.deb"
     state: present
   with_items: "{{metricbeat_packages}}"
   notify: metricbeat restart
